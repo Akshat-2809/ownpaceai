@@ -1,0 +1,29 @@
+.hero { padding: 140px 0 100px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 48px; align-items: center; }
+.h1 { font-family: var(--serif); font-weight: 400; font-size: 84px; line-height: .98; letter-spacing: -.02em; margin: 18px 0 0; }
+.h1 em { font-style: normal; position: relative; display: inline-block; }
+.h1 em svg { position: absolute; left: -2%; bottom: -.12em; width: 104%; height: .3em; overflow: visible; }
+.h1 em path { stroke-dasharray: 420; stroke-dashoffset: 420; animation: draw 1.6s .4s cubic-bezier(.3,.8,.3,1) forwards; }
+.lede { margin: 26px 0 0; font-size: 20px; line-height: 1.55; color: var(--moss); max-width: 44ch; }
+
+.map { background: var(--card); border: 1px solid var(--line); border-radius: 30px; padding: 18px; display: flex; flex-direction: column; gap: 12px; }
+.map svg { display: block; width: 100%; height: auto; border-radius: 20px; }
+.trail { fill: none; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 6 7; }
+.hk { offset-rotate: 0deg; animation-name: walk; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
+@keyframes walk { 0% { offset-distance: 0%; } 85%, 100% { offset-distance: 100%; } }
+.flag { transform-origin: 362px 40px; animation: wave 1.6s ease-in-out infinite; }
+.pace { display: grid; grid-template-columns: auto repeat(3, minmax(0, 1fr)); gap: 6px; align-items: center; }
+.pace span { padding: 0 8px 0 4px; color: var(--moss); }
+.pace button { height: 44px; border-radius: 12px; border: 1px solid var(--line); background: transparent; font: inherit; font-weight: 600; cursor: pointer; color: var(--moss); }
+.pace button:hover { border-color: var(--pine); color: var(--pine); }
+.pace button.on { background: var(--pine); border-color: var(--pine); color: var(--mist); }
+
+@media (max-width: 980px) {
+  .hero { padding-top: 50px; grid-template-columns: minmax(0, 1fr); }
+  .h1 { font-size: 54px; }
+}
+@media (max-width: 400px) {
+  .h1 { font-size: 46px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .h1 em path { stroke-dashoffset: 0; }
+}

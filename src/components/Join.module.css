@@ -1,0 +1,27 @@
+.joinbox { border-radius: 40px; background: var(--accent); color: var(--pine); padding: 64px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+.joinbox :focus-visible { outline-color: var(--pine); }
+.h2 { margin-top: 10px; }
+.lede { margin: 18px 0 0; font-size: 18px; line-height: 1.6; max-width: 40ch; }
+
+.form { display: flex; flex-direction: column; gap: 12px; }
+.form label { font-family: var(--mono); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; }
+.form input, .form select { height: 56px; border-radius: 16px; border: 1.5px solid var(--pine); background: rgba(255,255,255,.6); padding: 0 18px; font: inherit; font-size: 16px; color: var(--pine); }
+.form input::placeholder { color: #5A4A3C; }
+.form [aria-invalid="true"] { border-width: 2.5px; background: #FFFFFF; }
+.form button { height: 58px; border-radius: 999px; border: 0; background: var(--pine); color: var(--mist); font: inherit; font-weight: 700; font-size: 16px; cursor: pointer; transition: background .2s, color .2s; }
+.form button:hover { background: var(--card); color: var(--pine); }
+.err { margin: -4px 0 4px; font-size: 15px; font-weight: 700; color: var(--pine); }
+.err::before { content: "▲ "; font-size: 11px; vertical-align: 1px; }
+
+.ok { padding: 28px; border-radius: 24px; background: rgba(255,255,255,.6); border: 1.5px solid var(--pine); display: flex; flex-direction: column; gap: 10px; }
+.ok b { font-family: var(--serif); font-weight: 400; font-size: 28px; line-height: 1.2; }
+.ok p { margin: 0; font-size: 17px; line-height: 1.55; }
+.ok a { color: var(--pine); font-weight: 700; overflow-wrap: anywhere; }
+.ok a:hover { color: var(--pine); text-decoration-thickness: 2px; }
+
+@media (max-width: 980px) {
+  .joinbox { grid-template-columns: minmax(0, 1fr); padding: 32px; }
+}
+@media (max-width: 400px) {
+  .joinbox { border-radius: 28px; padding: 26px 20px; }
+}

@@ -1,0 +1,62 @@
+.head { padding-block: 150px 24px; }
+.headin { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+.title { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 76px; line-height: 1.02; letter-spacing: -.02em; }
+.intro { margin: 0; font-size: 20px; line-height: 1.55; color: var(--moss); max-width: 56ch; }
+
+.page { padding-block: 40px 0; }
+
+/* the short version */
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 30px; overflow: hidden; }
+.cardHead { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; padding: 24px 28px; background: var(--pine); color: var(--mist); }
+.cardHead h2 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 32px; }
+.cardHead :global(.cap) { color: var(--sage); }
+.rows { margin: 0; }
+.row { display: grid; grid-template-columns: 220px minmax(0, 1fr); border-bottom: 1px dashed var(--line); }
+.row:last-child { border-bottom: 0; }
+.row dt, .row dd { margin: 0; padding: 18px 28px; }
+.row dt { font-family: var(--mono); font-size: 12px; line-height: 1.55; padding-top: 21px; letter-spacing: .06em; text-transform: uppercase; color: var(--moss); }
+.row dd { font-size: 17px; line-height: 1.6; }
+
+.layout { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: 64px; align-items: start; margin-top: 64px; }
+
+.toc { position: sticky; top: calc(var(--top-offset) + 24px); }
+.tocBox { background: var(--card); padding: 18px 20px; border: 1px solid var(--line); border-radius: 20px; }
+.tocBox summary { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--moss); cursor: pointer; list-style: none; margin-bottom: 10px; }
+.tocBox summary::-webkit-details-marker { display: none; }
+.tocBox ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.tocBox li + li a { border-top: 1px dashed var(--line); }
+.tocBox a { display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 6px; align-items: baseline; padding: 9px 0; font-size: 15px; line-height: 1.35; font-weight: 500; color: var(--moss); text-decoration: none; transition: color .2s, padding .25s; }
+.tocBox a:hover { color: var(--pine); padding-left: 6px; }
+.tocNum { font-family: var(--mono); font-size: 11px; color: var(--rust); }
+
+.doc { min-width: 0; display: flex; flex-direction: column; gap: 52px; font-size: 17px; line-height: 1.65; color: var(--moss); }
+.section { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; scroll-margin-top: calc(var(--top-offset) + 24px); }
+.section p { margin: 0; max-width: 70ch; }
+.section h2 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 40px; line-height: 1.1; color: var(--pine); text-wrap: pretty; }
+.section h3 { margin: 8px 0 0; font-size: 19px; font-weight: 700; color: var(--pine); }
+.section ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; max-width: 70ch; }
+.section ul > li { position: relative; padding-left: 26px; }
+.section ul > li::before { content: ""; position: absolute; left: 2px; top: .5em; width: 10px; height: 10px; border-radius: 50%; background: var(--mist); border: 2px solid var(--pine); }
+.section b { color: var(--pine); font-weight: 700; }
+.section a { color: var(--pine); text-underline-offset: 3px; }
+.section a:hover { color: var(--rust); }
+
+/* the part people need to find */
+.stuck { align-self: stretch; padding: 22px 24px; background: var(--card); border: 1px solid var(--line); border-left: 6px solid var(--accent); border-radius: 20px; color: var(--pine); display: flex; flex-direction: column; gap: 6px; }
+
+@media (max-width: 980px) {
+  .head { padding-top: 48px; }
+  .title { font-size: 52px; }
+  .layout { grid-template-columns: minmax(0, 1fr); gap: 32px; margin-top: 40px; }
+  .toc { position: static; }
+  .tocBox summary { margin-bottom: 0; }
+  .tocBox[open] summary { margin-bottom: 10px; }
+  .section h2 { font-size: 32px; }
+}
+@media (max-width: 620px) {
+  .title { font-size: 44px; }
+  .row { grid-template-columns: minmax(0, 1fr); }
+  .row dt { padding-bottom: 0; }
+  .row dd { padding-top: 4px; }
+  .cardHead h2 { font-size: 28px; }
+}

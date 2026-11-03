@@ -1,0 +1,15 @@
+.band { background: var(--pine); color: var(--mist); border-radius: 40px; padding: 90px 70px; position: relative; overflow: hidden; }
+.contour { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .18; }
+.label { position: relative; margin: 0; font-weight: 400; color: var(--sage); }
+.band p { position: relative; margin: 18px 0 0; font-family: var(--serif); font-size: 58px; line-height: 1.12; max-width: 20ch; }
+.band p span { color: var(--accent); }
+.band small { position: relative; display: block; margin-top: 26px; color: var(--sage); }
+
+@media (max-width: 980px) {
+  .band { padding: 48px 28px; }
+  .band p { font-size: 36px; }
+}
+@media (max-width: 400px) {
+  .band { border-radius: 28px; padding: 40px 22px; }
+  .band p { font-size: 31px; }
+}

@@ -1,0 +1,15 @@
+.three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 56px 0 0; padding: 0; list-style: none; }
+.tc { border-radius: 28px; padding: 28px; background: var(--card); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 18px; min-height: 300px; }
+.tc svg { width: 100%; height: 90px; }
+.tc h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 28px; }
+.tc p { margin: 0; font-size: 16px; line-height: 1.55; color: var(--moss); }
+/* the lift uses `translate`, so the reveal animation's `transform` doesn't cancel it */
+.best { background: var(--pine); color: var(--mist); border-color: var(--pine); translate: 0 -14px; }
+.best p { color: var(--sage); }
+.dash { stroke-dasharray: 4 6; animation: mv 1.2s linear infinite; }
+@keyframes mv { to { stroke-dashoffset: -20; } }
+
+@media (max-width: 980px) {
+  .three { grid-template-columns: minmax(0, 1fr); }
+  .best { translate: none; }
+}

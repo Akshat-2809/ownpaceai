@@ -1,0 +1,13 @@
+.page { min-height: 100vh; min-height: 100dvh; display: flex; align-items: center; padding-block: 60px; }
+/* no trail rail here, so the content centres without its left gutter */
+.inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px; width: 100%; padding-left: 40px; }
+.logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo:hover { color: var(--pine); }
+.logo b { font-family: var(--serif); font-weight: 400; font-size: 26px; }
+.big { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(46px, 8vw, 96px); line-height: 1.02; letter-spacing: -.02em; max-width: 14ch; }
+.big em { font-style: normal; color: var(--rust); }
+.note { margin: 0; font-size: 19px; color: var(--moss); }
+
+@media (max-width: 980px) {
+  .inner { padding-left: 16px; }
+}
